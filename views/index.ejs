@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs")%>
+<div class="search-div">
+  <form action="/search" method="post">
+    <div id="search">
+        <!-- <label class="search-label" for="search">Search for the Cocktail</label> -->
+        <input type="search" name="search" id="search-area" placeholder="Find your favourite cocktail" />
+    </div>
+  </form>
+</div>
+<div class="random">
+  <h2 class="random-drinks">Random drinks</h2>
+</div>
+<div class="cocktail-list">
+  
+<%if(data && data.length>0){ %>
+ <% for(let i=0;i<data.length;i++){ %>
+  <!-- Sending drink id to the server -->
+  <a  href="/cocktail/<%= data[i].id %>"> 
+    <div class="index-cocktail">
+      <img class="index-cocktail-img"
+        src="<%=data[i].image%>"
+        alt="<%=data[i].drink%>"
+      />
+      <h3 class="index-category"><%=data[i].category%></h3>
+      <h2 class="index-cocktail-title"><%=data[i].drink%></h2>
+      <!-- <button class="details">Details</button> -->
+    </div>
+  </a>
+  <%}%> 
+  <%}else{ %>
+    <p class="error"><%=error%></p>
+  <%}%>
+</div>
+  <script src="/js/script.js"></script>
+  <%- include("partials/footer.ejs")%>

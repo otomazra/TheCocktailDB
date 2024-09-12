@@ -1,0 +1,573 @@
+body {
+  background-color: #f5f5f5 !important;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  /* font-weight: <weight>; */
+  font-style: normal;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+.pacifico-regular {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.playfair-display-<uniquifier> {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 150px;
+  padding-right: 150px;
+  border-bottom: solid 1px rgb(223, 223, 223);
+}
+
+header a {
+  text-decoration: none;
+  /* box-shadow: none !important; */
+}
+
+header li {
+  list-style-type: none;
+  box-shadow: none !important;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.banner {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 25px;
+  color: orange;
+}
+
+.db {
+  color: lime;
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* .footer-div {
+  height: 80px;
+} */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 150px;
+  padding-right: 150px;
+  border-top: solid rgb(218, 216, 216) 1px;
+  height: 80px;
+}
+
+footer a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 20px;
+  color: #008080;
+}
+footer a:hover {
+  color: orangered;
+  font-size: 25px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+/* drink.ejs */
+
+.main-container {
+  margin: 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.drink-main {
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.drink-name,
+.drink-category,
+.alcohol,
+.glass,
+.ingredients {
+  font-weight: bold;
+  font-family: sans-serif;
+  color: coral;
+  /* background-color: aquamarine; */
+  margin-right: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+li {
+  color: crimson;
+}
+
+.instruction-title {
+  margin-top: 10px;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: coral;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.instruction-div {
+  /* background-color: #50c878; */
+  display: flex;
+  justify-content: center;
+  width: 800px;
+  padding-left: 10px;
+  padding-right: 40px;
+}
+
+.instruction-div > p {
+  width: 830px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.ingredients {
+  margin-bottom: 10px;
+}
+
+/* .ingredient {
+  color: #c7ea46;
+} */
+
+#ingredients {
+  margin-bottom: 5px;
+}
+
+.name-data,
+.category-data,
+.alco-data,
+.glass-data,
+.instruction-text {
+  color: #333333;
+  font-weight: normal;
+  font-size: 1.2rem;
+}
+
+.ingredient-measure {
+  margin: 5px;
+  font-size: 1.2rem;
+  font-weight: normal;
+  margin-top: 0;
+}
+
+.page-title {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4rem;
+  color: #004d4d !important;
+  margin-bottom: 50px;
+  /* margin-right: 55px; */
+}
+
+/* #FF6F61
+#008080 */
+
+.home-button {
+  display: flex;
+  justify-content: center;
+  margin: 60px auto 30px auto;
+}
+
+#homePage {
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 2px 14px #666666;
+  -moz-box-shadow: 1px 2px 14px #666666;
+  box-shadow: 1px 2px 14px #666666;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 18px;
+  background: #50c878;
+  padding: 12px 20px 12px 20px;
+  text-decoration: none;
+  border: none;
+  padding: 15px 20px 15px 20px;
+}
+
+#homePage:hover {
+  background: #2e8b57;
+  text-decoration: none;
+}
+
+#aboutButton {
+  -webkit-border-radius: 15;
+  -moz-border-radius: 15;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 2px 14px #666666;
+  -moz-box-shadow: 1px 2px 14px #666666;
+  box-shadow: 1px 2px 14px #666666;
+  font-family: Arial;
+  color: #3a3a3a;
+  font-size: 18px;
+  /* background: #619df7; */
+  padding: 15px 20px 15px 20px;
+  text-decoration: none;
+  border: none;
+}
+
+#aboutButton:hover {
+  background: #949494;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.drink-title-div {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.drink-info {
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: #eeebeb; */
+}
+
+.image-div,
+.text-div {
+  width: 45%;
+}
+
+.text-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.image-div {
+  display: flex;
+  justify-content: center;
+}
+
+.image-div img {
+  border-radius: 20px;
+  max-width: 400px;
+}
+
+/* index.ejs */
+
+.search-label {
+  font-size: 2.5rem;
+}
+
+.random {
+  text-align: left;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.random-drinks {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  text-align: left;
+  padding-left: 30px;
+  font-size: 40px;
+}
+
+.cocktail-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-bottom: 100px;
+}
+
+.index-cocktail-img {
+  width: 250px;
+  border-radius: 13px;
+}
+
+.cocktail-list a {
+  text-decoration: none;
+}
+
+.index-cocktail {
+  max-width: 260px;
+  margin-bottom: 30px;
+}
+
+.index-category {
+  font-size: 1.3rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #ff6f61;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.index-cocktail-title {
+  font-size: 1.5rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: #008080;
+  margin-top: 0;
+}
+
+.search-div {
+  display: flex;
+  justify-content: center;
+  width: 400px;
+  margin-bottom: 60px;
+  margin-top: 60px;
+}
+
+.search-div form {
+  width: 100%;
+}
+
+#search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 100px;
+  /* background-color: ivory; */
+}
+
+.error {
+  font-size: 20px;
+}
+
+#search-area {
+  width: 400px;
+  height: 50px;
+  text-align: center;
+  font-size: 25px;
+}
+
+/* #FF6F61
+#008080 */
+
+/* about.ejs */
+
+.about-text {
+  color: #333333;
+  font-weight: normal;
+  font-size: 1.2rem;
+  text-align: left;
+  margin: auto 200px 200px 200px;
+}
+
+.subtitle {
+  font-weight: 600;
+  display: block;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+@media (width >=320px) and (width <=767px) {
+  #homePage {
+    display: none;
+  }
+  header {
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  header a {
+    width: 140px;
+  }
+  .banner {
+    font-size: 20px;
+  }
+  .navigation-list {
+    padding: 0;
+  }
+  #aboutButton {
+    box-shadow: none;
+  }
+  .main-container {
+    margin: 0;
+  }
+  .search-div {
+    width: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+  #search {
+    height: 100px;
+  }
+  #search-area {
+    width: 300px;
+    height: 40px;
+    font-size: 20px;
+  }
+  .drink-title-div {
+    height: 90px;
+  }
+  .page-title {
+    font-size: 1.7rem;
+  }
+  .drink-main {
+    margin-left: 10px;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .drink-info {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    font-size: 1rem !important;
+  }
+  .text-div {
+    padding-left: 0;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .text-div span {
+    display: block;
+  }
+  .ingredient-list {
+    padding-left: 0;
+    margin: 0;
+    text-align: left;
+    list-style-type: none;
+  }
+  .image-div,
+  .text-div {
+    width: 95%;
+    text-align: left;
+    align-items: center;
+  }
+  .image-div img {
+    width: 230px;
+  }
+  .drink-name,
+  .drink-category,
+  .alcohol,
+  .glass,
+  .ingredients,
+  .name-data,
+  .category-data,
+  .alco-data,
+  .glass-data,
+  .instruction-text,
+  .ingredient-measure,
+  .instruction-title {
+    font-size: 15px;
+  }
+  .ingredient-measure span {
+    display: inline-block;
+  }
+  .property {
+    margin-bottom: 0;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .property span {
+    margin: 0;
+  }
+  .random {
+    padding-left: 0;
+  }
+  .random-drinks {
+    font-size: 28px;
+    padding-left: 0;
+    text-align: center;
+  }
+  .instruction-div {
+    width: 95%;
+    padding: 10px !important;
+    align-items: flex-start;
+  }
+  .instruction-div p {
+    width: 90%;
+    margin-top: 0;
+  }
+  footer {
+    padding: 0;
+    justify-content: space-evenly;
+  }
+  .banner {
+    font-size: 20px;
+  }
+  .navigation-list {
+    padding: 0;
+    width: 150px;
+    justify-content: flex-end;
+  }
+  .footer-text {
+    display: none;
+    font-size: 0px;
+    width: 0;
+    height: 0;
+  }
+  .home-link {
+    display: none;
+  }
+  .about-link a {
+    font-size: 17px;
+  }
+  .index-category,
+  .index-cocktail-title {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .main-container {
+    padding: 10px;
+  }
+  .page-title {
+    margin-bottom: 20px;
+  }
+  .about-text {
+    margin: 0;
+  }
+  .subtitle {
+    margin-top: 20px;
+  }
+}

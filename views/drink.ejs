@@ -1,0 +1,34 @@
+<%- include("partials/header.ejs")%>
+<div class="drink-main">
+  <%if(data && data.length >0) { %>
+  <div class="drink-title-div">
+    <h1 class="page-title "><%= data.drink %></h1>
+  </div>
+  <div class="drink-info">
+    <div class="image-div">
+      <img src="<%= data.image %>">
+    </div>
+    <div class="text-div">
+      <p class="property"><span class="drink-name">Name:</span><span class="name-data"><%= data.drink %></span></p>
+      <p class="property"><span class="drink-category">Category:</span><span class="category-data"><%= data.category%></span> </p>
+      <p class="property"><span class="alcohol">Alcohol:</span><span class="alco-data"> <%= data.alcoholic %></span></p>
+      <p class="property"><span class="glass">Glass:</span><span class="glass-data"><%= data.glass %></span></p>
+      <p class="property" id="ingredients"><span class="ingredients">Ingredients:</span></p>
+      <ul class="ingredient-list">
+      <% for(let i=0;i<data.consistance.length;i++){ %>
+      <li class="ingredient-measure"><span class="measure"><%=data.consistance[i].measure%></span>
+        <span class="ingredient"><%= data.consistance[i].ingredient %>,
+        </li>
+      <%}%>
+      </ul>
+    </div>
+  </div>
+  <div class="instruction-div">
+    <p><span class="instruction-title">Instruction:</span> <span class="instruction-text text"><%= data.instructions %></span></p>
+  </div>
+ <%} else { %>
+  <h5><%=error%></h5>
+ <%}%>
+</div>
+<script src="/js/script.js"></script>
+<%- include("partials/footer.ejs")%>
