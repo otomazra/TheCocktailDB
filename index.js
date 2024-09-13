@@ -63,24 +63,20 @@ app.get("/cocktail/:id", async (req, res) => {
 
         measure = drink["strMeasure" + i];
         ingredient = drink["strIngredient" + i];
-        if (!measure) {
-          //There are measureless ingredients so in this case we need empty space.
+        if (!measure) {  //There are measureless ingredients so in this case we need empty space.
           measure = "";
         }
-        if (!ingredient) {
-          //If the ingredients are no more we end the for cycle.
+        if (!ingredient) {  //If the ingredients are no more we end the for cycle.
           break;
         }
-        const consistance = {
-          // Object of the measure and ingredient.
+        const consistance = {  // Object of the measure and ingredient.
           measure: measure,
           ingredient: ingredient,
         };
         consistanceArray.push(consistance); //Filling the array with the measure and ingreadient object.
       }
 
-      const drinkData = {
-        // The final drink object with the necessary data.
+      const drinkData = {  // The final drink object with the necessary data.
         id: cocktailId,
         drink: drink.strDrink,
         category: drink.strCategory,
@@ -91,13 +87,13 @@ app.get("/cocktail/:id", async (req, res) => {
         consistance: consistanceArray,
       };
       res.render("drink", {
-        data: drinkData,
+        data: drinkData, error: "No drink found with the specified ID"
       });
       console.log(drinkData);
     } else {
       res.render("drink.ejs", {
         data: null,
-        error: "There is not any drink under the given ID",
+        error: "There is not any drink under given ID",
       });
     }
   } catch (error) {
@@ -133,7 +129,7 @@ app.post("/search", async (req, res) => {
       res.render("index", { data: dataArray });
       console.log(dataArray);
     } else {
-      res.render("index.ejs", { data: null, error: "No cocktails found" });
+      res.render("index.ejs", { data: null});
     }
   } catch (error) {
     console.log(error.message);
