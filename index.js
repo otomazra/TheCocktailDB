@@ -87,13 +87,13 @@ app.get("/cocktail/:id", async (req, res) => {
         consistance: consistanceArray,
       };
       res.render("drink", {
-        data: drinkData, error: "No drink found with the specified ID"
+        data: drinkData, error: null
       });
       console.log(drinkData);
     } else {
       res.render("drink.ejs", {
         data: null,
-        error: "There is not any drink under given ID",
+        error: "No drink found with the specified ID",
       });
     }
   } catch (error) {
