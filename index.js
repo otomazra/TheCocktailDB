@@ -1,6 +1,7 @@
 import express from "express";
 import axios from "axios";
 import bodyParser from "body-parser";
+import _ from "lodash";
 
 const app = express();
 const port = 3000;
@@ -39,7 +40,7 @@ app.get("/", async (req, res) => {
       // Turning JSON object into a string
       console.log(JSON.stringify(result[i].data.drinks[0].strDrink));
     }
-    res.render("index", { data: dataArray });
+    res.render("index.ejs", { data: dataArray, listTitle: "Random Drinks" });
   } catch (error) {
     res.status(404).send(error.message);
   }
@@ -63,20 +64,24 @@ app.get("/cocktail/:id", async (req, res) => {
 
         measure = drink["strMeasure" + i];
         ingredient = drink["strIngredient" + i];
-        if (!measure) {  //There are measureless ingredients so in this case we need empty space.
+        if (!measure) {
+          //There are measureless ingredients so in this case we need empty space.
           measure = "";
         }
-        if (!ingredient) {  //If the ingredients are no more we end the for cycle.
+        if (!ingredient) {
+          //If the ingredients are no more we end the for cycle.
           break;
         }
-        const consistance = {  // Object of the measure and ingredient.
+        const consistance = {
+          // Object of the measure and ingredient.
           measure: measure,
           ingredient: ingredient,
         };
         consistanceArray.push(consistance); //Filling the array with the measure and ingreadient object.
       }
 
-      const drinkData = {  // The final drink object with the necessary data.
+      const drinkData = {
+        // The final drink object with the necessary data.
         id: cocktailId,
         drink: drink.strDrink,
         category: drink.strCategory,
@@ -87,7 +92,8 @@ app.get("/cocktail/:id", async (req, res) => {
         consistance: consistanceArray,
       };
       res.render("drink", {
-        data: drinkData, error: null
+        data: drinkData,
+        error: null,
       });
       console.log(drinkData);
     } else {
@@ -126,10 +132,13 @@ app.post("/search", async (req, res) => {
         console.log(info[i].strDrink);
         console.log(info[i].strCategory);
       }
-      res.render("index", { data: dataArray });
+      res.render("index", {
+        data: dataArray,
+        listTitle: _.upperFirst(req.body.search) + " Drinks",
+      });
       console.log(dataArray);
     } else {
-      res.render("index.ejs", { data: null});
+      res.render("index.ejs", { data: null });
     }
   } catch (error) {
     console.log(error.message);
