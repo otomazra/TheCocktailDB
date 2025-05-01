@@ -135,10 +135,11 @@ app.post("/search", async (req, res) => {
       res.render("index", {
         data: dataArray,
         listTitle: _.upperFirst(req.body.search) + " Drinks",
+        error: null,
       });
       console.log(dataArray);
     } else {
-      res.render("index.ejs", { data: null });
+      res.render("index.ejs", { data: [], listTitle: "No drink found", error: "No drinks match your search"});
     }
   } catch (error) {
     console.log(error.message);
